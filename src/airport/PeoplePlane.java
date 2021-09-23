@@ -1,6 +1,6 @@
 package airport;
 
-public class PeoplePlane extends Airplane {
+final class PeoplePlane extends Airplane {
     private int maxNumberOfPassenger;
     private int currentNumberOfPassenger;
 
@@ -48,7 +48,7 @@ public class PeoplePlane extends Airplane {
         return maxNumberOfPassenger;
     }
 
-    public void setMaxNumberOfPassenger(int maxNumberOfPassenger) {
+    protected void setMaxNumberOfPassenger(int maxNumberOfPassenger) {
         this.maxNumberOfPassenger = maxNumberOfPassenger;
     }
 

@@ -1,7 +1,7 @@
 package airport;
 
-public class CargoPlane extends Airplane {
-    private final int CAPACITY = 20;
+final class CargoPlane extends Airplane {
+    private int capacity = 20;
     private double weight;
 
     public CargoPlane() {
@@ -17,8 +17,8 @@ public class CargoPlane extends Airplane {
     public void load(int weight) {
         if (isFlying) {
             System.out.println("CargoPlane " + planeIdentification + " can not load, because we are already flying");
-        } else if (weight > CAPACITY) {
-            System.out.println("Cargo Plane " + planeIdentification + " loads " + CAPACITY + " tons of cargo, " + (weight - CAPACITY) + " tons does not fit.");
+        } else if (weight > capacity) {
+            System.out.println("Cargo Plane " + planeIdentification + " loads " + capacity + " tons of cargo, " + (weight - capacity) + " tons does not fit.");
         } else {
             System.out.println("CargoPlane " + planeIdentification + " is loading with " + weight + " tons.");
             setWeight(weight);
@@ -44,7 +44,11 @@ public class CargoPlane extends Airplane {
     }
 
     public int getCapacity() {
-        return CAPACITY;
+        return capacity;
+    }
+
+    protected void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public double getWeight() {
@@ -61,7 +65,7 @@ public class CargoPlane extends Airplane {
                 "planeIdentification='" + planeIdentification + '\'' +
                 ", isFlying=" + isFlying +
                 ", cruiseSpeed=" + cruiseSpeed +
-                ", CAPACITY=" + CAPACITY +
+                ", capacity=" + capacity +
                 ", weight=" + weight +
                 '}';
     }
